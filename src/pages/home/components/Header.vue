@@ -7,10 +7,14 @@
       <span class="iconfont">&#xe632;</span>
       输入城市/景点/游玩场景
     </div>
+    <router-link to='/city'>
+
     <div class="header-right">
       {{this.city}}
       <span class="iconfont arrow-icon">&#xe64a;</span>
     </div>
+        </router-link>
+
   </div>
 </template>
 
@@ -52,13 +56,15 @@ export default {
     color: #ccc;
     background-color: #fff;
   }
-
   .header-right {
     width: 1.24rem;
     float: right;
+    color:#fff;
     text-align: center;
 
     .arrow-icon {
+          color:#fff;
+
       font-size: 0.2rem;
     }
   }

@@ -1,10 +1,10 @@
 <template>
   <div>
     <home-header :city="city"></home-header>
-    <home-swiper :list='list' v-if='list'></home-swiper>
-    <home-icon   :iconList='list'></home-icon>
-    <home-recommend></home-recommend>
-    <home-weekend></home-weekend>
+    <home-swiper :list='swiperLists' v-if='swiperLists'></home-swiper>
+    <home-icon  :list='iconList' ></home-icon>
+    <home-recommend :list='recommendList'></home-recommend>
+    <home-weekend :list='weekendList'></home-weekend>
   </div>
 </template>
 
@@ -26,8 +26,10 @@ export default {
   data(){
       return{
           city:'',
-          list:[],
-        iconList:[]
+          swiperLists:[],
+         iconList:[],
+         recommendList:[],
+         weekendList:[]
       }
   },
   mounted() {
@@ -43,8 +45,10 @@ export default {
             const data=res.data;
             // console.log(data.swiperList);
             this.city=data.city;
-            this.list=data.swiperList;
+            this.swiperLists=data.swiperList;
             this.iconList=data.iconList;
+            this.recommendList=data.recommendList;
+            this.weekendList=data.weekendList;
             // console.log(this.iconList);
         }
     }
