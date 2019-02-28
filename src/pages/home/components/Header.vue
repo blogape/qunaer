@@ -7,20 +7,22 @@
       <span class="iconfont">&#xe632;</span>
       输入城市/景点/游玩场景
     </div>
-    <router-link to='/city'>
-
-    <div class="header-right">
-      {{this.$store.state.city}}
-      <span class="iconfont arrow-icon">&#xe64a;</span>
-    </div>
-        </router-link>
-
+    <router-link to="/city">
+      <div class="header-right">
+        {{getcitys}}
+        <span class="iconfont arrow-icon">&#xe64a;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
+import {mapState,mapGetters} from 'vuex';
 export default {
- 
+  computed:{
+    ...mapState(['city']),
+    ...mapGetters(['getcitys'])
+  }
 };
 </script>
 
@@ -54,15 +56,16 @@ export default {
     color: #ccc;
     background-color: #fff;
   }
+
   .header-right {
-    width: 1.24rem;
+    min-width: 1.04rem;
     float: right;
-    color:#fff;
+    color: #fff;
+    padding: 0 0.1rem;
     text-align: center;
 
     .arrow-icon {
-          color:#fff;
-
+      color: #fff;
       font-size: 0.2rem;
     }
   }

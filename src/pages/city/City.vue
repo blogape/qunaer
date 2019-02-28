@@ -13,6 +13,7 @@ import axios from 'axios';
 import CitySearch from './components/Search';
 import CityList   from './components/List';
 import CityAlphabet from './components/Alphabet';
+import  {mapState} from 'vuex';
 export default {
     components:{
         CityHeader:CityHeader,
