@@ -44,7 +44,6 @@ export default {
         if(res.ret&&res.data){
             const data=res.data;
             // console.log(data.swiperList);
-            this.city=data.city;
             this.swiperLists=data.swiperList;
             this.iconList=data.iconList;
             this.recommendList=data.recommendList;
