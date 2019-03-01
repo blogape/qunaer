@@ -63,7 +63,7 @@ export default {
        this.$router.push('/');
      },
      ...mapMutations(['changeCity'])
-  },
+  }, 
   computed: {
     hasNoData(){
       return !this.list.length
