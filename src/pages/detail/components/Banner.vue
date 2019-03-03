@@ -1,9 +1,9 @@
 <template>
     <div class="banner" @click='handleBannerClick'>
-        <img src="//m.360buyimg.com/mobilecms/s750x366_jfs/t1/32308/4/3504/100303/5c752374Eeeca82e3/81ce2421718416ef.jpg!cr_1125x549_0_72!q70.jpg.dpg"/>
+        <img :src="bannerImg"/>
         <div class="banner-info">
-            <div class="banner-title">大连圣亚海洋世界（AAAA景区）</div>
-            <div class="banner-number">39</div>
+            <div class="banner-title">{{this.sightNmae}}</div>
+            <div class="banner-number">{{this.bannerImgs.length}}</div>
         </div>
         <components-gallary v-show='showGallary'></components-gallary>
     </div>
@@ -12,6 +12,11 @@
 <script>
 import ComponentsGallary from 'components/gallary/Gallary'
 export default {
+    props:{
+        sightNmae:String,
+        bannerImg:String,
+        bannerImgs:Array
+    },
     data(){
         return{
             showGallary:false
